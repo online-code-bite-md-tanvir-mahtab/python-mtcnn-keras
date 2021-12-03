@@ -13,6 +13,12 @@ from numpy.lib.npyio import load
 from keras.models import load_model
 from numpy.lib.shape_base import expand_dims
 import os
+from sklearn.metrics import accuracy_score
+from sklearn.preprocessing import LabelEncoder
+from sklearn.preprocessing import Normalizer
+from sklearn.svm import SVC
+
+
 TRAIN_DATA = []
 
 
@@ -127,6 +133,33 @@ print("Loaded:", train_x.shape,train_y.shape,test_x.shape,test_y.shape)
 print("Fcace classification")
 
 print(f"Dataset : train={train_x.shape[0]},test={test_x.shape[0]}")
+print("the data : ",train_x[0:2])
+# # now i am going to normalize the dataset
+# in_encoder = Normalizer(norm=12)
+# train_x  = in_encoder.transform(train_x[0])
+# test_x = in_encoder.transform(test_x[0])
+# # label encoder
+# out_encoder = LabelEncoder()
+# out_encoder.fit(train_y)
+# train_y = out_encoder.transform(train_y[0])
+# test_y = out_encoder.transform(test_y[0])
+# # fit the model
+# model = SVC(kernel='linear',probability=False)
+# model.fit(train_x,train_y)
+
+# # now i am going to predict the data
+# yhat_train = model.predict(train_x)
+# yhat_test = model.predict(test_x)
+
+
+# # now i am going to scoring them
+
+# score_train = accuracy_score(train_y,yhat_train)
+# score_test = accuracy_score(test_y,yhat_test)
+
+
+# print(f"Accuracy = {score_train*100} ,test={score_test*100}")
+
 
 
 
