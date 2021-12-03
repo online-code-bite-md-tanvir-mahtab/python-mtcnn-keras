@@ -101,28 +101,28 @@ data = load('demoreader/student_data_faces.npz')
 train_x,train_y,test_x,test_y =     data['arr_0'],data['arr_1'],data['arr_2'],data['arr_3']
 
 print("Loaded:", train_x.shape,train_y.shape,test_x.shape,test_y.shape)
-# demoreader/model/facenet_keras.h5
-# loading the facenet model
-f_net_model = load_model('demoreader/model/facenet_keras.h5')
-print("Loaded Model")
+# # demoreader/model/facenet_keras.h5
+# # loading the facenet model
+# f_net_model = load_model('demoreader/model/facenet_keras.h5')
+# print("Loaded Model")
 
-# now i am going to train every set of face to an embedding
-new_train_x = list()
+# # now i am going to train every set of face to an embedding
+# new_train_x = list()
 
-for face_pixels in train_x:
-    embedding = get_embedding(f_net_model,face_pixels)
-    new_train_x.append(embedding)
-new_train_x = asarray(new_train_x)
-print(new_train_x.shape)
+# for face_pixels in train_x:
+#     embedding = get_embedding(f_net_model,face_pixels)
+#     new_train_x.append(embedding)
+# new_train_x = asarray(new_train_x)
+# print(new_train_x.shape)
 
-# for the test data
-new_test_x = list()
+# # for the test data
+# new_test_x = list()
 
-for face_pixels in test_x:
-    embedding = get_embedding(f_net_model,face_pixels)
-    new_test_x.append(new_test_x)
-new_test_x = asarray(new_test_x)
-print(new_test_x)
+# for face_pixels in test_x:
+#     embedding = get_embedding(f_net_model,face_pixels)
+#     new_test_x.append(new_test_x)
+# new_test_x = asarray(new_test_x)
+# print(new_test_x)
 
 
 
