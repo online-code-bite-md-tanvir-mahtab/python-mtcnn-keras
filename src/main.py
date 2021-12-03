@@ -124,6 +124,10 @@ print("Loaded:", train_x.shape,train_y.shape,test_x.shape,test_y.shape)
 # new_test_x = asarray(new_test_x)
 # print(new_test_x)
 
+print("Fcace classification")
+
+print(f"Dataset : train={train_x.shape[0]},test={test_x.shape[0]}")
+
 
 
 
